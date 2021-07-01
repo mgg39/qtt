@@ -1,8 +1,8 @@
 language: python
 matrix:
   include:
-  - name: Minimal installation 3.8
-    python: 3.8
+  - name: Minimal installation 3.9
+    python: 3.9
     sudo: true
     dist: xenial
     env: QT_QPA_PLATFORM=offscreen
