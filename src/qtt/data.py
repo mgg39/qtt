@@ -5,15 +5,14 @@ import logging
 import os
 import pickle
 from functools import wraps
-from typing import Optional, Dict, Any
+from typing import Any, Dict, Optional
 
 import matplotlib.pyplot as plt
 import numpy as np
 import qcodes
 import scipy
-from qcodes.data.data_set import new_data
 from qcodes.data.data_array import DataArray
-from qcodes.data.data_set import DataSet
+from qcodes.data.data_set import DataSet, new_data
 from qcodes.plots.qcmatplotlib import MatPlot
 
 import qtt.algorithms.generic
@@ -32,7 +31,7 @@ def load_example_dataset(filename, verbose=0):
     Returns:
         Example dataset or None of no dataset can be found
     """
-    exampledatadir = os.path.join(qtt.__path__[0], 'exampledata')
+    exampledatadir = os.path.join(qtt.__path__[0], 'exampledata')  # type: ignore  # mypy issue #1422
 
     dataset = qtt.data.load_dataset(os.path.join(exampledatadir, filename), verbose=verbose)
     return dataset
@@ -145,7 +144,7 @@ def get_dataset(dataset_handle):
     if isinstance(dataset_handle, DataSet):
         return dataset_handle
 
-    raise ValueError('Invalid dataset argument type ({})!'.format(type(dataset_handle)))
+    raise ValueError(f'Invalid dataset argument type ({type(dataset_handle)})!')
 
 
 def load_dataset(location, io=None, verbose=0):
