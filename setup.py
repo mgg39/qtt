@@ -35,7 +35,7 @@ def get_package_data(root_dir):
 tests_require = ['coverage', 'jupyter', 'mypy', 'types-redis', 'types-python-dateutil', 'pytest']
 
 install_requires = [
-    'apscheduler', 'attrs', 'dulwich', 'h5py', 'hickle', 'IPython>=0.1', 'jupyter', 'lmfit', 'matplotlib>=3.0',
+    'apscheduler', 'attrs', 'dulwich', 'h5py', 'IPython>=0.1', 'jupyter', 'lmfit', 'matplotlib>=3.0',
     'numdifftools', 'numpy>=1.15', 'opencv-python', 'PyQt5', 'pyqtgraph', 'pyvisa', 'pyzmqrpc', 'qcodes>=0.23.0',
     'qcodes-contrib-drivers', 'qilib', 'qtpy', 'qupulse', 'redis', 'scipy', 'scikit-image',
     'shapely', 'sympy'
@@ -45,7 +45,7 @@ if platform.system() == 'Windows':
     install_requires.append('pywin32')
 
 rtd_requires = [
-    'sphinx>=1.7', 'sphinx_rtd_theme', 'nbsphinx', 'sphinx-automodapi','sphinx_copybutton'
+    'sphinx>=1.7', 'sphinx_rtd_theme', 'nbsphinx', 'sphinx-automodapi', 'sphinx_copybutton'
 ]
 
 extras_require = {"rtd": rtd_requires}
@@ -67,6 +67,7 @@ setup(name='qtt',
           'Programming Language :: Python :: 3',
           'Programming Language :: Python :: 3.7',
           'Programming Language :: Python :: 3.8',
+          'Programming Language :: Python :: 3.9',
           'Topic :: Scientific/Engineering'
       ],
       license='MIT',
